@@ -1,0 +1,269 @@
+/*
+  960 Grid System ~ Text CSS.
+  Learn more ~ http://960.gs/
+
+  Licensed under GPL and MIT.
+*/
+
+
+@baseFont: 10pt 'Helvetica', 'sans-serif';
+@mainColor: #000000;
+@yellowColor: rgb(255,130,0);
+@transparentYellowColor: rgba(255,130,0,0.7);
+@transparentBlackColor: rgba(0,0,0,0.7);
+@transparentWhiteColor: rgba(255,255,255,0.8);
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @alpha: 1) {
+    @val: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow:         @val;
+    -webkit-box-shadow: @val;
+    -moz-box-shadow:    @val;
+}
+
+.border-radius (@radius: 5px) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+.border-left-radius (@radius: 5px) {
+-webkit-border-top-left-radius: @radius;
+-webkit-border-bottom-left-radius: @radius;
+-moz-border-radius-topleft: @radius;
+-moz-border-radius-bottomleft: @radius;
+border-top-left-radius: @radius;
+border-bottom-left-radius: @radius;
+}
+
+.border-right-radius (@radius: 5px) {
+-webkit-border-top-right-radius: @radius;
+-webkit-border-bottom-right-radius: @radius;
+-moz-border-radius-topright: @radius;
+-moz-border-radius-bottomright: @radius;
+border-top-right-radius: @radius;
+border-bottom-right-radius: @radius;
+}
+
+/* `Basic HTML
+----------------------------------------------------------------------------------------------------*/
+
+body {
+  font: @baseFont;
+  color: @mainColor;
+  line-height: 150%;
+  background: url('/static/imgs/bg.jpg') fixed;
+  margin: 0;
+  padding: 0;
+  //overflow: hidden;
+}
+
+small {
+  font-size: 90%;
+}
+
+hr {
+  border: 0 #000 solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+  margin-bottom: 10px;
+}
+
+/* `Headings
+----------------------------------------------------------------------------------------------------*/
+
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h4 {
+  font-size: 12px;
+}
+
+h5 {
+  font-size: 10px;
+}
+
+h6 {
+  font-size: 9px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-weight: bold;
+  font-family: Verdana;
+  line-height: 150%;
+}
+/* `Spacing
+----------------------------------------------------------------------------------------------------*/
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+li {
+  margin-left: 30px;
+}
+
+p,
+dl,
+s
+s
+s
+s
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset,
+figure {
+  margin-bottom: 20px;
+}
+
+table {
+//  border-collapse: separate;
+//  border-spacing: 3px;
+  th {
+    font-weight: bold;
+  }
+  td, th {
+    padding: 3px 7px;
+    font-size: 9pt;
+  }
+  td {
+    border: 1px solid gray;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &.ancor {
+    height: 0;
+    display: block;
+  }
+}
+
+.header {
+    background: @transparentBlackColor;
+    div.container_12 {
+        background: url('/static/imgs/header.png') no-repeat scroll 0 30px transparent;
+    }
+    height: 155px;
+    .grid_6 {
+        font: 16pt 'Tahoma';
+        color: white;
+        text-align: right;
+        padding-top: 50px;
+        div {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.page {
+    height: 1000px;
+}
+
+.mainmenu {
+    margin-top: 100px;
+}
+
+.menuitem {
+    padding: 0;
+    background: @transparentYellowColor;
+    margin: 5px 0;
+    a {
+        color: white;
+        text-align: right;
+        font: normal 14pt Verdana;
+        vertical-align: middle;
+        display: block;
+        padding: 10px;
+        padding: 30px 20px;
+        cursor: pointer;
+    }
+    &.main {
+      float: left;
+      width: 450px;
+      margin: 5px;
+      a {
+        font-size: 18pt;
+      }
+    }
+}
+
+.flatpage {
+    margin-top: 0px;
+    .leftSide {
+        .content {
+            padding: 20px;
+            color: white;
+            background: @transparentBlackColor;
+            font: 10.5pt Tahoma;
+            p {
+                line-height: 120%;
+                text-align: justify;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    img {
+        border: 5px solid black;
+        .box-shadow(0, 0, 5px);
+        float: left;
+        margin: 0 20px 20px 0;
+    }
+}
+
+.logo {
+  background: url("/static/imgs/logo.png") no-repeat scroll 0 5px transparent;
+  display: block;
+  height: 294px;
+  margin-left: -62px;
+  position: absolute;
+  width: 57px;
+}
+
+.hidden {
+  display: none;
+}
+
+table {
+  width: 100%;
+}
+
+a#vk {
+  top: 590px;
+  display: block;
+  margin-left: 760px;
+  position: absolute;
+  width: 150px;
+  height: 37px;
+  background: url('/static/imgs/vk.png');
+  z-index: 999;
+}
+
+.hidden {
+  display: none !important;
+}
