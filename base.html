@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+    <link rel='shortcut icon' href='/static/imgs/favicon.ico' type='image/x-icon' />
+    <link rel='stylesheet' type='text/css' href='/static/css/reset.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/css/grid.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/fancyBox/source/jquery.fancybox.css'/>
+    <link rel='stylesheet/less' type='text/css' href='/static/css/text.less'/>
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js'></script>
+    <script type='text/javascript' src='/static/fancyBox/source/jquery.fancybox.js'></script>
+    <script type="text/javascript" src="/static/fancyBox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type='text/javascript' src='/static/js/string.format-1.0.packed.js'></script>
+    <script type='text/javascript' src='/static/js/jquery.scrollTo-min.js'></script>
+    <script type='text/javascript' src='/static/js/less-1.0.41.min.js'></script>
+    <script type='text/javascript' src='/static/js/main.js'></script>
+    {% block js-css-add %}
+    {% endblock %}
+  <title>
+    &nbsp;ООО "Уютный ДОМ" 
+  </title>
+</head>
+
+{% load markup %}
+{% load webdesign %}
+
+<body>
+    <div class='header'>
+    <div class='container_12'>
+        <div class='grid_6 bg_logo'>
+            <a class='ancor' href='#' name=''></a>
+        </div>
+        <div class='grid_6'>
+            <div class='phone'>{{config.phone}}</div>
+            <div class='email'><a href='mailto:{{config.email}}'>{{config.email}}</a></div>
+        </div>
+        <div class='clear'></div>
+    </div> <!-- end of .container_12 -->
+    </div> <!-- end of .header -->
+
+
+    <div class='container_12 mainmenu page'>
+    {% for p in pages %}
+        <div class='menuitem main'>
+            <a href='#{{p.url}}'>{{p.title|safe}}</a>
+        </div>
+    {% endfor %}
+    </div> <!-- end of .container_12 -->
+
+{% for page in pages %}
+  <div class='container_12 flatpage page'>
+    <a class='ancor' name='{{page.url}}' href='#'></a>
+    <a class='logo' href='#'></a>
+        <div class='grid_9 leftSide alpha'>
+            <div class='content'>
+            {{page.content|markdown:'extra'}}
+            </div>
+        </div>
+        <div class='grid_3 omega'>
+        {% for p in pages %}
+            {% if p.url != page.url %}
+            <div class='menuitem'>
+                <a href='#{{p.url}}'>{{p.title|safe}}</a>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+  </div> <!-- end of .container_12 -->
+{% endfor %}
+
+
+  <div class='container_12 flatpage'>
+    <a id='vk' href='http://vk.com/komiteplo' target='_blank'></a>
+  </div> <!-- end of .container_12 -->
+
+<!-- Yandex.Metrika counter --><div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter11811361 = new Ya.Metrika({id:11811361, trackLinks:true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/11811361" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
