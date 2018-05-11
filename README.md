@@ -1,2 +1,2 @@
 # komiteplo
-www.komiteplo.ru
+http://комитепло.рф
